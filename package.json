@@ -1,0 +1,33 @@
+{
+  "name": "progressboard",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "connect-mongodb-session": "^2.2.0",
+    "cookie-parser": "~1.4.4",
+    "csurf": "^1.10.0",
+    "express": "~4.16.1",
+    "express-favicon": "^2.0.1",
+    "express-session": "^1.17.0",
+    "favicons": "^7.0.2",
+    "geoip-lite": "^1.4.0",
+    "http-errors": "^2.0.0",
+    "javascript-obfuscator": "^0.18.1",
+    "johnnydepp": "^0.1.4",
+    "mongodb": "^4.12.0",
+    "mongoose": "^5.7.7",
+    "mongoose-auto-increment": "^5.0.1",
+    "multer": "^1.4.2",
+    "node-cache": "^5.0.2",
+    "node-emoji": "^1.10.0",
+    "nunjucks": "^3.2.3",
+    "path": "^0.12.7",
+    "shortid": "^2.2.15"
+  },
+  "devDependencies": {
+    "nunjucks-comma-filter": "^1.0.0"
+  }
+}

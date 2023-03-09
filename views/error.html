@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
+  <title>500: Internal Server Server</title>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background-color: #2F3242;
+      font-family: 'Inter', sans-serif;
+    }
+    svg {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-top: -250px;
+      margin-left: -400px;
+    }
+    .message-box {
+      margin-left: 50px;
+      color: #FFF;
+    }
+    .message-box h1 {
+      font-size: 60px;
+      line-height: 46px;
+      margin-bottom: 40px;
+    }
+    .buttons-con .action-link-wrap {
+      margin-top: 40px;
+    }
+    .buttons-con .action-link-wrap a {
+      background: #68C950;
+      padding: 8px 25px;
+      border-radius: 4px;
+      color: #FFF;
+      font-weight: bold;
+      font-size: 14px;
+      transition: all 0.3s linear;
+      cursor: pointer;
+      text-decoration: none;
+      margin-right: 10px
+    }
+    .buttons-con .action-link-wrap a:hover {
+      background: #5A5C6C;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <div class="message-box">
+    <h1>{{ message }}</h1>
+    <h2>{{ error.status }}</h2>
+    <pre>{{ error.stack }}</pre>
+    <p>
+      {{ error }}
+    </p>
+    <div class="buttons-con">
+      <div class="action-link-wrap">
+        <a onclick="history.back(-1)"
+          class="link-button link-back-button">Go Back</a>
+        <a href="/"
+          class="link-button">Go to Home Page</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

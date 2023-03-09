@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Progress Board | WIDGETS </title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <link rel="stylesheet" href="./css/vendor/selectize.css" type="text/css">
+    <link rel="stylesheet" href="./css/style.css" type="text/css">
+</head>
+<body>
+
+    <div class="wrapper">
+        <form action="/submit" id="add-widget-form" class="bounce" method="post" data-widget="" style="display: none;">
+            <input type="hidden" name="id" value="">
+            <div class="form-control form-column">
+                <label>Widget name</label>
+                <input type="text" id="name" name="name" placeholder="Enter widget name" required>
+            </div>  
+            <div class="form-control">
+                <label for="information">Information gathering</label>
+                <div>
+                    <select name="information" id="information">
+                        <option value="not-started">not-started</option>
+                        <option value="working">working</option>
+                        <option value="completed">completed</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-control">
+                <label for="planning">Planning</label>
+                <div>
+                    <select name="planning" id="planning">
+                        <option value="not-started">not-started</option>
+                        <option value="working">working</option>
+                        <option value="completed">completed</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-control">
+                <label for="design">Design</label>
+                <div>
+                    <select name="design" id="design">
+                        <option value="not-started">not-started</option>
+                        <option value="working">working</option>
+                        <option value="completed">completed</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-control">
+                <label for="development">Development</label>
+                <div>
+                    <select name="development" id="development">
+                        <option value="not-started">not-started</option>
+                        <option value="working">working</option>
+                        <option value="completed">completed</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-control">
+                <label for="testing">Testing</label>
+                <div>
+                    <select name="testing" id="testing">
+                        <option value="not-started">not-started</option>
+                        <option value="working">working</option>
+                        <option value="completed">completed</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-control">
+                <label for="launch">Launch</label>
+                <div>
+                    <select name="launch" id="launch">
+                        <option value="not-started">not-started</option>
+                        <option value="working">working</option>
+                        <option value="completed">completed</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-control" id="save-btn"><input type="submit" value="Save" class="save"></div>
+        </form>
+        
+        <div class="widgets">
+            {% for widget in widgets %}
+            <div id="widget">
+                <div class="header">
+                    <div class="form">
+                        <form class="confirmation" action="/remove" method="post">
+                            <input type="hidden" name="id" value="{{ widget.id }}">
+                            <button type="submit" class="btn"><i class="fa-solid fa-trash fa-lg"></i></button> 
+                            <i class="fa-sharp fa-solid fa-pen edit" data-widget="{{ widget | dump }}"></i>
+                        </form>
+                    </div>
+                </div>  
+                <h3>{{widget.name}}</h3>
+                <div class="flow">
+                    <div class="task {{widget.information}}"><span>Information</span></div>
+                    <span style='font-size:40px;'>&#8595;</span>
+                    <div class="task {{widget.planning}}"><span>Planning</span></div>
+                    <span style='font-size:40px;'>&#8595;</span>
+                    <div class="task {{widget.design}}"><span>Design</span></div>
+                    <span style='font-size:40px;'>&#8595;</span>
+                    <div class="task {{widget.development}}"><span>Development</span></div>
+                    <span style='font-size:40px;'>&#8595;</span>
+                    <div class="task {{widget.testing}}"><span>Testing</span></div>
+                    <span style='font-size:40px;'>&#8595;</span>
+                    <div class="task last {{widget.launch}}" ><span>Launch</span></div>
+                </div>
+
+            </div>
+            {% endfor %}
+        </div>
+
+        <div class="add-widget">
+           <img src="/icons/add.svg">
+        </div>
+    </div>
+
+</body>
+
+{% block js %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<script src="./js/vendor/selectize.min.js"></script>
+<script src="./js/script.js"></script>  
+{% endblock %}
+</html>

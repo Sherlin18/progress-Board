@@ -1,0 +1,141 @@
+body {
+    font-family: 'Poppins', sans-serif;
+}
+.wrapper {
+    display: flex;
+    align-items: flex-start;
+}
+.widgets {
+    display: flex;
+    justify-content: space-evenly;
+}
+#widget-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.flow{
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;    
+}
+.form {
+    position: absolute;
+    right: -40px;
+    top: 10px;
+}
+.header {
+    display: flex;
+    position: relative;
+}
+h3 {
+    font-weight: 600;
+    text-align: center;
+}
+.task {
+    font-weight: 400;
+    background-color: #ffffff;
+    color: #333;
+    width: 200px;
+    text-align: center;
+    border: 1px solid #d7d7d7;
+    padding: 15px 5px;      
+    border-radius: 10px;
+}
+.last{
+    margin-bottom: 20px;
+}
+#widget {
+    background-color:rgb(233, 233, 233);
+    margin: 20px;
+    padding: 10px 70px 20px 70px;
+    border-radius: 20px;
+}
+.disabled {
+    opacity: 0.3;
+}
+.working {
+    background-color: #ffbc57;
+}
+.completed {
+    background-color: #11fac0;
+}
+.not-started {
+    background-color: #ffffff;
+}
+.btn{
+    border: none;
+    background: none;
+    padding: 10px;
+    cursor: pointer;
+    font-weight: 400;
+}
+ i {
+    cursor: pointer;
+ }
+#add-widget-form {
+    position: fixed;
+    font-weight: 400;
+    right: 50px;
+    bottom: 130px;
+    padding: 30px;
+    width: 300px;
+    background: #F5F5F5;
+    box-shadow: 4px 4px 20px rgb(0 0 0 / 15%);
+    border-radius: 20px;
+}
+input ,
+select {
+    padding: 8px;
+    background: #FFFFFF;
+    border-radius: 5px;
+    border: none;
+    margin: 5px 0;
+}
+.save {
+    background: #0066FF;
+    border-radius: 5px;
+    color: white;
+    padding: 10px 30px;
+    cursor: pointer;
+}
+.add-widget {
+    position: fixed;
+    cursor: pointer;
+    bottom: 40px;
+    right: 40px;
+}
+.form-control.form-column {
+    flex-direction: column;
+    align-items: stretch;
+}
+.form-control {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+.form-control:not(.form-column) > * {
+    flex: 50%;
+}
+#save-btn {
+    align-items: flex-end;
+    cursor: pointer;
+}
+
+.bounce {
+    animation: bounce 1.2s ease ;
+  }
+  @keyframes bounce {
+    0% {
+      opacity: 0;
+      transform: translateY(2000px);
+    }
+    60% {
+      opacity: 1;
+      transform: translateY(-30px);
+    }
+    80% { transform: translateY(10px); }
+    100% { transform: translateY(0); }
+  }
